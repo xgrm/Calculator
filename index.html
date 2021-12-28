@@ -5,18 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Spartan:wght@700;702&display=swap" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Calculator app</title>
 </head>
 <body>
 
-
+<div class="contianer">
+  
+   <div class="head">
+     <div class="clac">
+       <p>clac</p>
+     </div>
+     <div class="theme">
+       <p>theme</p>
+     </div>
+     <div class="switch">
+      <div class="tw-toggle">
+        <input type="radio" name="toggle" value="false">
+        <label class="toggle toggle-yes"><i class="fa fa-times"></i></label>
+        <input checked type="radio" name="toggle" value="-1">
+        <label class="toggle toggle-yes"><i class="fa fa-minus"></i></label>
+        <input type="radio" name="toggle" value="true">
+        <label class="toggle toggle-yes"><i class="fa fa-check"></i></label>
+        <span></span>  
+      </div>
+     </div>
+   </div>
+   <div class="screen">
+     <p>0.0</p>
+   </div>
+   <div class="keypad">
+     <div class="row">
+       <div class="key">
+         
+       </div>
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key_equal_del key"></div>
+     </div>
+     <div class="row">
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+     </div>
+     <div class="row">
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+     </div>
+     <div class="row">
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+       <div class="key"></div>
+     </div>
+     <div class="row">
+       <div class="key_reset key_big key"></div>
+       <div class="key_equal_del key_big key"></div>
+     </div>
+   </div>
+</div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
