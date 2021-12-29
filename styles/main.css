@@ -8,6 +8,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
   height: 100%;
   background-color: hsl(222, 26%, 31%);
   font-family: "Spartan", sans-serif;
@@ -45,9 +47,6 @@ body {
     border-radius: 5px 5px 5px 5px;
     height: 100px;
     width: 445px;
-    color: aliceblue;
-    font-size: 50px;
-    font-weight: 700;
     padding: 13px;
   }
   .keypad {
@@ -66,12 +65,24 @@ body {
     display: flex;
   }
   .key {
+    display: flex;
+    justify-content: center;
     background-color: hsl(30, 25%, 89%);
     border-radius: 5px 5px 5px 5px;
     height: 45px;
     width: 80px;
     margin: 10px;
     box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+  }
+  .key i {
+    display: inline-block;
+    color: hsl(198, 20%, 13%);
+    font-style: normal;
+    padding: 7px 10px 0px 5px;
+    text-align: center;
+    font-size: 32px;
+    height: 45px;
+    width: 80px;
   }
   .key_big {
     height: 45px;
@@ -84,6 +95,12 @@ body {
   .key_equal_del {
     background-color: hsl(225, 21%, 49%);
     box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+  }
+  .special_color i {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px 7px 0px 2px;
   }
 
   .style {
@@ -110,6 +127,23 @@ body {
     color: white;
     font-weight: 700;
     font-size: 23px;
+  }
+  .screen input {
+    display: inline;
+    background-color: hsl(224, 36%, 15%);
+    font-family: "Spartan", sans-serif;
+    color: aliceblue;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: right;
+    border: none;
+    height: 95px;
+    width: 420px;
+    opacity: 1;
+  }
+  .screen input:focus {
+    outline: none;
+    border: none;
   }
 }
 
