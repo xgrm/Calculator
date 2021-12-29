@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   height: 100%;
   background-color: hsl(222, 26%, 31%);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Spartan", sans-serif;
 }
 .attribution {
   font-size: 11px;
@@ -31,7 +31,7 @@ body {
   .head {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 5px 5px 5px 5px;
     height: 80px;
     width: 445px;
@@ -41,7 +41,7 @@ body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    background-color: hsl(223, 31%, 20%);
+    background-color: hsl(224, 36%, 15%);
     border-radius: 5px 5px 5px 5px;
     height: 100px;
     width: 445px;
@@ -54,7 +54,7 @@ body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    background-color: hsl(224, 36%, 15%);
+    background-color: hsl(223, 31%, 20%);
     border-radius: 5px 5px 5px 5px;
     height: 330px;
     width: 445px;
@@ -85,15 +85,42 @@ body {
     background-color: hsl(225, 21%, 49%);
     box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
   }
+
+  .style {
+    display: flex;
+    justify-content: space-between;
+    height: 15px;
+    width: 45px;
+    color: white;
+    font-size: 9px;
+    margin: 0px 0px 0px 5px;
+  }
+  .right_side {
+    display: flex;
+    justify-content: space-between;
+  }
+  .theme {
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    text-align: center;
+    margin: 22px 20px 0px 0px;
+  }
+  .calc {
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+  }
 }
 
 .tw-toggle {
-  /* background: #95A5A6; */
+  background: hsl(223, 31%, 20%);
   display: inline-block;
   padding: 2px 3px;
   border-radius: 20px;
+  height: 20px;
+  width: 55px;
   position: relative;
-  border: 2px solid #95a5a6;
 }
 
 .tw-toggle label {
@@ -103,47 +130,43 @@ body {
   color: #95a5a6;
   position: relative;
   z-index: 2;
-  margin: 0;
+  margin: 1px ​2px 13px -1px;
   text-align: center;
-  padding: 2px 3px;
+  padding: 0px 6px 0px 6px;
   font-size: 15px;
-  /* cursor: pointer; */
 }
 
 .tw-toggle input {
-  /* display: none; */
   position: absolute;
   z-index: 3;
   opacity: 0;
-  cursor: pointer;
 }
 
 .tw-toggle span {
-  height: 21px;
-  width: 21px;
-  line-height: 21px;
+  height: 12px;
+  width: 12px;
+  line-height: 5px;
   border-radius: 50%;
   background: #fff;
   display: block;
   position: absolute;
-  left: 22px;
-  top: 2px;
+  top: 3px;
   transition: all 0.3s ease-in-out;
 }
 
 .tw-toggle input[value="false"]:checked ~ span {
   background: #e74c3c;
-  left: 2px;
-  color: #fff;
+  left: 4px;
+  color: green;
 }
 
 .tw-toggle input[value="true"]:checked ~ span {
   background: #27ae60;
-  left: 46px;
+  left: 40px;
 }
 .tw-toggle input[value="-1"]:checked ~ span {
   background: #95a5a6;
-  left: 23px;
+  left: 21px;
 }
 
 .tw-toggle input[value="false"]:checked + label,
