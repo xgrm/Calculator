@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1440px) {
+  .contianer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 70px;
+    height: 500px;
+    width: 450px;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 5px 5px;
+    height: 80px;
+    width: 445px;
+    margin-bottom: 10px;
+  }
+  .screen {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: var(--screen-background);
+    border-radius: 5px 5px 5px 5px;
+    height: 100px;
+    width: 445px;
+    padding: 13px;
+  }
+  .keypad {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: var(--keypad-background);
+    border-radius: 5px 5px 5px 5px;
+    height: 330px;
+    width: 445px;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 20px;
+  }
+}
