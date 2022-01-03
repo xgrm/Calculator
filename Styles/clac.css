@@ -38,4 +38,46 @@
     padding-left: 5px;
     padding-right: 20px;
   }
+
+  .row {
+    display: flex;
+  }
+  .key {
+    display: flex;
+    justify-content: center;
+    background-color: var(--key-background);
+    border-radius: 5px 5px 5px 5px;
+    height: 45px;
+    width: 80px;
+    margin: 10px;
+    box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+  }
+  .key p {
+    display: inline-block;
+    color: var(--key-font-color);
+    font-style: normal;
+    padding: 7px 10px 0px 5px;
+    text-align: center;
+    font-size: 32px;
+    height: 45px;
+    width: 80px;
+  }
+  .key_big {
+    height: 45px;
+    width: 180px;
+  }
+  .key_reset {
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0px 3px 0px 0px hsl(6, 70%, 34%);
+  }
+  .key_equal_del {
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+  }
+  .special_color p {
+    color: var(--main-font-color);
+    text-align: center;
+    font-size: 15px;
+    padding: 15px 7px 0px 2px;
+  }
 }
