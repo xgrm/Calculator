@@ -80,4 +80,84 @@
     font-size: 15px;
     padding: 15px 7px 0px 2px;
   }
+
+  .style {
+    display: flex;
+    justify-content: space-between;
+    height: 15px;
+    width: 45px;
+    color: var(--main-font-color);
+    font-size: 9px;
+    margin: 0px 0px 0px 5px;
+  }
+  .right_side {
+    display: flex;
+    justify-content: space-between;
+  }
+  .theme {
+    color: var(--main-font-color);
+    font-size: 9px;
+    font-weight: 700;
+    text-align: center;
+    margin: 22px 20px 0px 0px;
+  }
+  .calc {
+    color: var(--main-font-color);
+    font-weight: 700;
+    font-size: 23px;
+  }
+  .tw-toggle {
+    background: var(--keypad-background);
+    display: inline-block;
+    padding: 2px 3px;
+    border-radius: 20px;
+    height: 20px;
+    width: 55px;
+    position: relative;
+  }
+
+  .tw-toggle label {
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    color: #95a5a6;
+    position: relative;
+    z-index: 2;
+    margin: 1px ​2px 13px -1px;
+    text-align: center;
+    padding: 0px 6px 0px 6px;
+    font-size: 15px;
+  }
+
+  .tw-toggle input {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .tw-toggle span {
+    height: 12px;
+    width: 12px;
+    line-height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .tw-toggle input[value="false"]:checked ~ span {
+    background: #e74c3c;
+    left: 4px;
+  }
+
+  .tw-toggle input[value="true"]:checked ~ span {
+    background: #27ae60;
+    left: 40px;
+  }
+  .tw-toggle input[value="-1"]:checked ~ span {
+    background: #95a5a6;
+    left: 21px;
+  }
 }
