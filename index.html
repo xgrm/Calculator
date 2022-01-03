@@ -2,25 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Spartan:wght@700;702&display=swap" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Calculator app</title>
 </head>
 <body>
 
-
+<div class="contianer">
+  
+   <div class="head">
+     <div class="calc">
+       <p>calc</p>
+     </div>
+     <div class="right_side">
+     <div class="theme">
+       <p>THEME</p>
+     </div>
+     <div class="switch">
+       <div class="style">
+         <div class="style_num">1</div>
+         <div class="style_num">2</div>
+         <div class="style_num">3</div>
+       </div>
+      <div class="tw-toggle">
+        <input type="radio" name="toggle" value="false">
+        <label class="toggle"></label>
+        <input checked type="radio" name="toggle" value="-1">
+        <label class="toggle"></label>
+        <input type="radio" name="toggle" value="true">
+        <label class="toggle"></label>
+        <span></span>  
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="screen">
+    <input id="screen_output" autofocus="true" >
+   </div>
+   <div class="keypad">
+     <div class="row">
+       <div class="key">7</div>
+       <div class="key">8</div>
+       <div class="key">9</div>
+       <div class="special_color key_equal_del key">DEL</div>
+     </div>
+     <div class="row">
+       <div class="key">4</div>
+       <div class="key">5</div>
+       <div class="key">6</div>
+       <div class="key">+</div>
+     </div>
+     <div class="row">
+       <div class="key">1</div>
+       <div class="key">2</div>
+       <div class="key">3</div>
+       <div class="key">-</div>
+     </div>
+     <div class="row">
+       <div class="key">.</div>
+       <div class="key">0</div>
+       <div class="key">/</div>
+       <div class="key">x</div>
+     </div>
+     <div class="row">
+       <div class="special_color key_reset key_big key">RESET</div>
+       <div class="special_color key_equal_del key_big key">=</div>
+     </div>
+   </div>
+</div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+<script src="./script.js"></script>
 </html>
