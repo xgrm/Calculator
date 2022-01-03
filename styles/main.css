@@ -1,3 +1,12 @@
+:root {
+  --background-color: hsl(222, 26%, 31%);
+  --screen-background: hsl(224, 36%, 15%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --key-background: hsl(30, 25%, 89%);
+  --key-font-color: hsl(198, 20%, 13%);
+  --main-font-color: white;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +20,7 @@ body {
   justify-content: space-between;
   justify-items: center;
   height: 100%;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--background-color);
   font-family: "Spartan", sans-serif;
 }
 .attribution {
@@ -43,7 +52,7 @@ body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    background-color: hsl(224, 36%, 15%);
+    background-color: var(--screen-background);
     border-radius: 5px 5px 5px 5px;
     height: 100px;
     width: 445px;
@@ -53,7 +62,7 @@ body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    background-color: hsl(223, 31%, 20%);
+    background-color: var(--keypad-background);
     border-radius: 5px 5px 5px 5px;
     height: 330px;
     width: 445px;
@@ -67,7 +76,7 @@ body {
   .key {
     display: flex;
     justify-content: center;
-    background-color: hsl(30, 25%, 89%);
+    background-color: var(--key-background);
     border-radius: 5px 5px 5px 5px;
     height: 45px;
     width: 80px;
@@ -76,7 +85,7 @@ body {
   }
   .key i {
     display: inline-block;
-    color: hsl(198, 20%, 13%);
+    color: var(--key-font-color);
     font-style: normal;
     padding: 7px 10px 0px 5px;
     text-align: center;
@@ -97,7 +106,7 @@ body {
     box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
   }
   .special_color i {
-    color: white;
+    color: var(--main-font-color);
     text-align: center;
     font-size: 15px;
     padding: 15px 7px 0px 2px;
@@ -108,7 +117,7 @@ body {
     justify-content: space-between;
     height: 15px;
     width: 45px;
-    color: white;
+    color: var(--main-font-color);
     font-size: 9px;
     margin: 0px 0px 0px 5px;
   }
@@ -117,14 +126,14 @@ body {
     justify-content: space-between;
   }
   .theme {
-    color: white;
+    color: var(--main-font-color);
     font-size: 9px;
     font-weight: 700;
     text-align: center;
     margin: 22px 20px 0px 0px;
   }
   .calc {
-    color: white;
+    color: var(--main-font-color);
     font-weight: 700;
     font-size: 23px;
   }
@@ -132,7 +141,7 @@ body {
     display: inline;
     background-color: hsl(224, 36%, 15%);
     font-family: "Spartan", sans-serif;
-    color: aliceblue;
+    color: var(--main-font-color);
     font-size: 50px;
     font-weight: 700;
     text-align: right;
@@ -148,7 +157,7 @@ body {
 }
 
 .tw-toggle {
-  background: hsl(223, 31%, 20%);
+  background: var(--keypad-background);
   display: inline-block;
   padding: 2px 3px;
   border-radius: 20px;
@@ -191,7 +200,6 @@ body {
 .tw-toggle input[value="false"]:checked ~ span {
   background: #e74c3c;
   left: 4px;
-  color: green;
 }
 
 .tw-toggle input[value="true"]:checked ~ span {
@@ -201,12 +209,4 @@ body {
 .tw-toggle input[value="-1"]:checked ~ span {
   background: #95a5a6;
   left: 21px;
-}
-
-.tw-toggle input[value="false"]:checked + label,
-.tw-toggle input[value="true"]:checked + label {
-  color: #fff;
-}
-.tw-toggle input[value="-1"]:checked + label {
-  color: #fff;
 }
