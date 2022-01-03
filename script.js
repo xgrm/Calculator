@@ -51,3 +51,11 @@ function input(props) {
     data.act = acts[props](parseFloat(data.number));
   }
 }
+
+const input_keyborad = document.getElementById("screen_output");
+input_keyborad.value;
+input_keyborad.addEventListener("input", updateValue);
+function updateValue(e) {
+  input_keyborad.innerText;
+  input("");
+}
