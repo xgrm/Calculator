@@ -52,7 +52,97 @@ function input(props) {
 }
 
 const input_keyborad = document.getElementById("screen_output");
+input_keyborad.value
 input_keyborad.addEventListener("beforeinput", updateValue);
 function updateValue(e) {
+  input_keyborad.innerText
   input("");
+}
+
+
+// const changeColor = document.querySelectorAll(".tw-toggle input");
+// changeColor.addEventListener("beforeinput", color);
+// function color(e){
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(e.value==="false"){
+  const
+}
 }
