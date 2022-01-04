@@ -1,0 +1,54 @@
+@media only screen and (max-width: 375px) {
+  .contianer {
+    margin-top: 70px;
+    margin-bottom: 14px;
+    height: 500px;
+    width: 300px;
+  }
+  .head {
+    height: 80px;
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  .screen {
+    height: 100px;
+    width: 300px;
+    padding: 13px;
+  }
+  .keypad {
+    height: 345px;
+    width: 300px;
+    margin-top: 10px;
+    padding: 15px;
+  }
+
+  .key {
+    height: 53px;
+    width: 53px;
+    margin: 5px 6px 8px 7px;
+  }
+  .key p {
+    padding: 12px 6px 1px 5px;
+    text-align: center;
+    font-size: 32px;
+    height: 53px;
+    width: 53px;
+  }
+  .key_big {
+    height: 45px;
+    width: 120px;
+  }
+  .key_reset_del p {
+    font-size: 15px;
+    padding: 16px 3px 0px 2px;
+  }
+  .key_equal p {
+    font-size: 12px;
+    padding: 15px 7px 0px 2px;
+  }
+  .screen input {
+    font-size: 40px;
+    height: 100px;
+    width: 280px;
+  }
+}
