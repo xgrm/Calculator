@@ -1,0 +1,40 @@
+:root {
+  --background-color: hsl(222, 26%, 31%);
+  --screen-background: hsl(224, 36%, 15%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --key-background: hsl(30, 25%, 89%);
+  --equal-key-background: hsl(6, 63%, 50%);
+  --del-key-background: hsl(225, 21%, 49%);
+  --main-key-shadow: hsl(28, 16%, 65%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --del-key-shadow: hsl(224, 28%, 35%);
+  --main-font-color: white;
+  --key-font-color: hsl(221, 14%, 31%);
+  --reset-key-font-color: white;
+  --equal-key-font-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  height: 100%;
+  background-color: var(--background-color);
+  font-family: "Spartan", sans-serif;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--main-font-color);
+}
+.attribution a {
+  color: var(--reset-key-font-color);
+}
