@@ -1,82 +1,134 @@
-const plus = (x) => {
-  return function (y) {
-    let z = x;
-    x = y;
-    return z + y;
+const calcScreen = document.getElementById("screen_output");
+const body = document.getElementsByTagName("body")[0];
+calcScreen.readOnly = true;
+var plus = (x) => {
+  var z = x;
+  return {
+    get: function (y) {
+      return z + y;
+    },
+    set: function (value) {
+      z = value;
+    },
   };
 };
-const minus = (x) => {
-  return function (y) {
-    let z = x;
-    x = y;
-    return z - y;
+var minus = (x) => {
+  var z = x;
+  return {
+    get: function (y) {
+      return z - y;
+    },
+    set: function (value) {
+      z = value;
+    },
   };
 };
-const divid = (x) => {
-  return function (y) {
-    if (y !== 0) {
-      let z = x;
-      x = y;
-      return z / y;
-    }
-    return NaN;
+var divid = (x) => {
+  var z = x;
+  return {
+    get: function (y) {
+      if (y !== 0) {
+        return x / y;
+      }
+      return NaN;
+    },
+    set: function (value) {
+      z = value;
+    },
   };
 };
-const multi = (x) => {
-  return function (y) {
-    let z = x;
-    x = y;
-    return z * y;
+var multi = (x) => {
+  var z = x;
+  return {
+    get: function (y) {
+      return z * y;
+    },
+    set: function (value) {
+      z = value;
+    },
   };
 };
+const valid = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
+  ".",
+  "/",
+  "=",
+  "+",
+  "-",
+  "x",
+  "Backspace",
+  "Delete",
+];
+const arithmeticMap = { "+": plus, "-": minus, "/": divid, x: multi };
+const arithmetic = {
+  action: null,
+  currentNumber: 0,
+  previousNumber: 0,
+  newAction: true,
+};
+function deleteOneDigit(num) {
+  const str = num.toString();
+  return parseFloat(str.slice(0, str.length - 1));
+}
 
-const acts = { "+": plus, "-": minus, "/": divid, x: multi };
-const data = { act: null, number: null };
-var counter = 0;
-function input(props) {
-  const output = document.getElementById("screen_output");
-  let current_value = output.value;
-  if (props === "DEL") {
-    data.number = output.value = current_value.slice(
-      0,
-      current_value.length - 1
-    );
-  } else if (props === "=") {
-    data.number = output.value = data.act(parseFloat(data.number)).toString(10);
-    counter = 0;
-  } else if (props === "RESET") {
-    output.value = "";
-    data.act = null;
-    data.number = null;
-  } else if (acts[props] === undefined) {
-    data.number = output.value = current_value + props;
-  } else {
-    if (counter === 1) {
-      data.number = data.act(parseFloat(data.number)).toString(10);
-      counter = 0;
+function Calculate(props) {
+  if (props === "Shift") return;
+  arithmetic.currentNumber = Number(calcScreen.value);
+
+  if (props === "DEL" || props === "Backspace" || props === "Delete") {
+    arithmetic.currentNumber = deleteOneDigit(arithmetic.currentNumber);
+    showOnCalcScreen(arithmetic.currentNumber);
+  } else if (props === "=" && arithmetic.action != null) {
+    if (!arithmetic.newAction) {
+      arithmetic.action.set(arithmetic.currentNumber);
+      arithmetic.currentNumber = arithmetic.previousNumber;
     }
-    output.value = " ";
-    data.act = acts[props](parseFloat(data.number));
-    counter++;
+    arithmetic.currentNumber = arithmetic.action.get(arithmetic.currentNumber);
+    showOnCalcScreen(arithmetic.currentNumber);
+    arithmetic.newAction = false;
+  } else if (props === "RESET") {
+    arithmetic.currentNumber = 0;
+    arithmetic.previousNumber = 0;
+    arithmetic.action = null;
+    arithmetic.newAction = true;
+    showOnCalcScreen("");
+  } else if (arithmeticMap[props] !== undefined) {
+    arithmetic.action = arithmeticMap[props](arithmetic.currentNumber);
+    showOnCalcScreen("");
+    arithmetic.newAction = true;
+  } else if (arithmetic.newAction === false) {
+    Calculate("RESET");
+    Calculate(props);
+  } else if (props == 0 || props === "." || parseFloat(props)) {
+    showOnCalcScreen(calcScreen.value + props);
+    arithmetic.previousNumber = Number(calcScreen.value);
   }
 }
 
-const input_keyborad = document.getElementById("screen_output");
-input_keyborad.value;
-input_keyborad.addEventListener("input", updateValue);
-function updateValue(e) {
-  console.log(e.target.value);
-  input("");
+function showOnCalcScreen(props) {
+  calcScreen.value = props;
 }
 
 const calc_keyborad = document.getElementsByClassName("key");
 for (var i = 0; i < calc_keyborad.length; i++) {
-  calc_keyborad[i].addEventListener("click", updateKeyborad, false);
-}
-function updateKeyborad(e) {
-  input(e.target.innerText);
+  calc_keyborad[i].addEventListener(
+    "click",
+    (e) => Calculate(e.target.innerText),
+    false
+  );
 }
 
+calcScreen.addEventListener("input", () => Calculate(""));
+body.addEventListener("keydown", (e) => Calculate(e.key));
 const toggle = document.getElementsByClassName("tw-toggle");
 for (var i = 0; i < toggle.length; i++) {
   toggle[i].addEventListener("click", changeColor, false);
